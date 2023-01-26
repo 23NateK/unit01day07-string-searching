@@ -8,11 +8,15 @@ public class FindTagContents {
         Scanner b = new Scanner(System.in);
         System.out.println("enter tag: ");
         String letter = b.nextLine();
-        int indx1 = html.indexOf("<"+letter)+3;
-        int indx2 = html.indexOf("</"+letter);
-        String word = html.substring(indx1, indx2);
-        System.out.println(word);
-        
+        int indx1 = html.indexOf("<"+letter);
+        if (indx1 == -1){
+            System.out.println(" there are no '"+letter+"' tags in the entered HTML");
+        }else{
+            indx1 = indx1+2+letter.length();
+            int indx2 = html.indexOf("</"+letter);
+            String word = html.substring(indx1, indx2);
+            System.out.println(word);
+        }
 
     }
 }
