@@ -8,7 +8,10 @@ public class FindTagContents {
         Scanner b = new Scanner(System.in);
         System.out.println("enter tag: ");
         String letter = b.nextLine();
-        
+        int indx1 = html.indexOf("<"+letter)+3;
+        int indx2 = html.indexOf("</"+letter);
+        String word = html.substring(indx1, indx2);
+        System.out.println(word);
         
 
     }
