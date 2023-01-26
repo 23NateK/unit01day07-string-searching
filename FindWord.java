@@ -9,14 +9,14 @@ public class FindWord {
         System.out.println("Enter letter: ");
         String letter = scanner.nextLine();
         int Lindx = sentence.indexOf(letter);
-        int startindx = sentence.lastIndexOf(" ", Lindx)+1;
-        int endindx = sentence.indexOf(" ", Lindx);
-        String word = sentence.substring(startindx,endindx);
-        System.out.println(word);
-
-
-
-
+        if (Lindx == -1){
+            System.out.println("letter not in sentence, big L");
+        }else{
+            int startindx = sentence.lastIndexOf(" ", Lindx)+1;
+            int endindx = sentence.indexOf(" ", Lindx);
+            String word = sentence.substring(startindx,endindx);
+            System.out.println(word);
+        }
         scanner.close();
     }
 }
