@@ -17,6 +17,7 @@ public class FindTagContents {
             String word = html.substring(indx1, indx2);
             System.out.println(word);
         }
-
+        a.close();
+        b.close();
     }
 }
