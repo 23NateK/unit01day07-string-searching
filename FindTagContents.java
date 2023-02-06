@@ -6,9 +6,8 @@ public class FindTagContents {
         Scanner a = new Scanner(System.in);
         System.out.println("enter html: ");
         String html = a.nextLine();
-        Scanner b = new Scanner(System.in);
         System.out.println("enter tag: ");
-        String letter = b.nextLine();
+        String letter = a.nextLine();
         int indx1 = html.indexOf("<"+letter);
         if (indx1 == -1){
             System.out.println(" there are no '"+letter+"' tags in the entered HTML");
@@ -19,6 +18,5 @@ public class FindTagContents {
             System.out.println(word);
         }
         a.close();
-        b.close();
     }
 }
