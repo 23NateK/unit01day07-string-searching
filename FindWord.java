@@ -1,10 +1,3 @@
-// BUG: searching for "d" in "the quick brown fox jumped" caused the following output:
-/* 
- * Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 20, end -1, length 26
-        at java.base/java.lang.String.checkBoundsBeginEnd(String.java:3319)
-        at java.base/java.lang.String.substring(String.java:1874)
-        at FindWord.main(FindWord.java:17)
- */
 import java.util.Scanner;
 public class FindWord {
     public static void main(String[] args) {
@@ -21,6 +14,9 @@ public class FindWord {
         }else{
             int startindx = sentence.lastIndexOf(" ", Lindx)+1;
             int endindx = sentence.indexOf(" ", Lindx);
+            if (endindx==-1){
+                endindx = sentence.length();
+            }
             String word = sentence.substring(startindx,endindx);
             System.out.println(word);
         }
